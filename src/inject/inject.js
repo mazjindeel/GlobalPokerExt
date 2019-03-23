@@ -36,8 +36,8 @@
 
 	// Naming conventions: (highcard)(lowcard)(suited)  : a k q j t 9 8 7 6 5 4 3 2 	: o s
 	const EARLY_HANDS = ["aao","kko","qqo","aks","jjo","tto","aqs","ajs","ako","kqs","ats","kjs","aqo"];
-	const MIDDLE_HANDS = ["99o","qjs","88o","jts","t9s","ajo"];
-	const LATE_HANDS = ["77o","66o","55o","98s","87s","a9s","a8s","a7s","a6s","a5s","a4s","a3s","a2s"];
+	const MIDDLE_HANDS = ["99o","qjs","88o","jts","t9s","ajo"].concat(EARLY_HANDS);
+	const LATE_HANDS = ["77o","66o","55o","98s","87s","a9s","a8s","a7s","a6s","a5s","a4s","a3s","a2s"].concat(MIDDLE_HANDS);
 	
 	const EARLY_POSITION = 0;
 	const MIDDLE_POSITION = 1/3;
