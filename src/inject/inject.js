@@ -194,7 +194,7 @@
 				}
 			}
 
-			// Early position
+			// Middle position
 			if (betPosition >= MIDDLE_POSITION) {
 				for (var i = 0; i < MIDDLE_HANDS.length; i++) {
 					if (simple === MIDDLE_HANDS[i])
@@ -202,7 +202,7 @@
 				}
 			}
 
-			// Early position
+			// Late position
 			if (betPosition >= LATE_POSITION) {
 				for (var i = 0; i < LATE_HANDS.length; i++) {
 					if (simple === LATE_HANDS[i])
@@ -1402,9 +1402,13 @@
 								else if (changedNode.classList.contains("seat-pos-7")) { tableController.seat[s.number].position = 7; }
 								else if (changedNode.classList.contains("seat-pos-8")) { tableController.seat[s.number].position = 8; }
 							}
-							else if (mutation.attributeName === "src" && changedNode.classList.contains("number-1") || changedNode.classList.contains("number-2")) {
-								var srcURL = changedNode.src;
-								tableController.addCard(s.number, srcURL.match(/..(?=[.]svg)/));
+
+							//M - Adding a player's exposed hole cards I thnk (at showdown)
+							else if (mutation.attributeName === "src" && (changedNode.classList.contains("number-1") || changedNode.classList.contains("number-2"))) {
+								// Old code 
+								//var srcURL = changedNode.src;
+								//tableController.addCard(s.number, srcURL.match(/..(?=[.]svg)/));
+								tableController.addCard(s.number, changedNode.classList.value.match("card-([^ ]*)")[1]);
 							}
 						break;
 						case "characterData":
