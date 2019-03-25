@@ -1352,7 +1352,7 @@
 
 						if (this.playerLoaded === 1) {
 							tableController.fillSeat(this.number, child.children[0].innerText.trim());
-							tableController.getSeat(this.number).balance = parseFloat(child.children[1].innerText);
+							tableController.getSeat(this.number).balance = parseFloat(child.children[1].innerText.replace(',', ''));
 						}
 					}
 					// action-text   action-amount   could be updated but we will just ignore everything until a new hand starts and record via the callback
@@ -1446,7 +1446,7 @@
 
 										if (s.playerLoaded === 1) {
 											tableController.fillSeat(s.number, addedNode.children[0].innerText.trim());
-											tableController.getSeat(s.number).balance = parseFloat(addedNode.children[1].innerText);
+											tableController.getSeat(s.number).balance = parseFloat(addedNode.children[1].innerText.replace(',', ''));
 										}
 									}
 								break;
@@ -1481,7 +1481,7 @@
 	
 									}
 									else if (parent.classList.contains("seat-balance")) {
-										tableController.getSeat(s.number).balance = parseFloat(addedNode.nodeValue);
+										tableController.getSeat(s.number).balance = parseFloat(addedNode.nodeValue.replace(',', ''));
 									}
 									else if (parent.classList.contains("player-status")) {
 	
@@ -1640,7 +1640,7 @@
 
 										if (s.playerLoaded === 1) {
 											tableController.fillSeat(s.number, addedNode.children[0].innerText.trim());
-											tableController.getSeat(s.number).balance = parseFloat(addedNode.children[1].innerText);
+											tableController.getSeat(s.number).balance = parseFloat(addedNode.children[1].innerText.replace(',', ''));
 										}
 									}
 								break;
@@ -1675,7 +1675,7 @@
 	
 									}
 									else if (parent.classList.contains("seat-balance")) {
-										tableController.getSeat(s.number).balance = parseFloat(addedNode.nodeValue);
+										tableController.getSeat(s.number).balance = parseFloat(addedNode.nodeValue.replace(',', ''));
 									}
 									else if (parent.classList.contains("player-status")) {
 	
